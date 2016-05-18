@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乐视体育-注册登录</title>
+    <link rel="stylesheet" href="css/lsSports-register.css">
+</head>
+<body>
+<div class="regPage">
+    <a href="javascript:;" class="close_page"></a>
+    <div class="logo">
+        <a href="javascript:;">注册</a>
+    </div>
+    <div class="userInfo" id="userInfo">
+        <ul>
+            <li class="tel">
+                <input type="text" value="手机号">
+            </li>
+            <li>
+                <input type="password">
+                <lable class="pwd">密码</lable>
+            </li>
+            <li class="activeCode">
+                <input type="text" value="验证码" class="w130">
+                <span href="javascript:;">a e g t</span>
+            </li>
+            <li class="activeCode">
+                <input type="text" value="六位激活码" class="w130">
+                <a href="javascript:;">获取激活码</a>
+            </li>
+            <li class="protoBox">
+                <input type="checkbox" checked="checked" class="protocol">
+                同意
+                <a href="javascript:;">乐视服务使用协议</a>
+            </li>
+            <li>
+                <a href="javascript:;" class="regButton">立即注册</a>
+            </li>
+        </ul>
+        <div class="overseaReg"><a href="javascript:;">海外手机号点此注册 > ></a></div>
+    </div>
+    <div class="login">已有乐视账号 ,<a href="javascript:;"> 直接登录</a></div>
+</div>
+<!--regPage end-->
+<!--..............................................-->
+<!--js  begin-->
+<script type="text/javascript">
+    var userInfo=document.getElementById("userInfo");
+    var oLis=userInfo.getElementsByTagName("li");
+    for(var i= 0;i<4;i++){
+        var curLi=oLis[i];
+        test(curLi);
+    }
+
+    function test(curEle){
+        var input=curEle.getElementsByTagName("input")[0];
+        if(input.value){
+            var oldValue=input.value;
+            input.onfocus=function() {
+                input.value="";
+            };
+            input.onblur=function(){
+                input.value=oldValue;
+            }
+        }else {
+            var lable=curEle.getElementsByTagName("lable")[0];
+            input.onfocus=function() {
+                lable.style.display="none";
+            };
+
+            input.onblur=function(){
+                lable.style.display="block";
+            };
+            return;
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>
