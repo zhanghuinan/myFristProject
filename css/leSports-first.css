@@ -542,7 +542,7 @@ html, body {
 .content .wrapper_box {
     position: absolute;
     left: 50%;
-    top: 383px;
+    bottom: 62px;
     margin-left: -460px;
     width: 920px;
     height: 223px;
@@ -780,7 +780,7 @@ html, body {
     margin-left: -460px;
     width: 920px;
     height: 54px;
-    background: rgba(0, 0, 0, .05);
+    background: rgba(0, 0, 0, .2);
     z-index: 5;
 }
 .content .info_title{

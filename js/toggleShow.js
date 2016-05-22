@@ -2,7 +2,7 @@
     function ToggleShow(curId){
         this.content=document.getElementById(curId);
         this.wrapper_box=utils.getElementsByClass("wrapper_box",this.content)[0];
-        this.info_title=utils.getElementsByClass("info_title",this.content);
+        this.info_title=utils.getElementsByClass("infoTitle",this.content);
         this.open_wrapper=utils.getElementsByClass("open_wrapper",this.content)[0];
         this.close_wrapper=utils.getElementsByClass("close_wrapper",this.content)[0];
         this.close_wrapper.onclick=this.myBind(this.close,this);
@@ -25,12 +25,13 @@
                     width:100,
                     height:50,
                     marginLeft:-560,
-                    top:375
+                    bottom: 230
                 },100,function() {
                     zhufengAnimate(_this.wrapper_box, {
                         width: 920,
                         height: 223,
-                        marginLeft: -460
+                        marginLeft: -460,
+                        bottom: 62
                     }, 300)})
             })
         }
@@ -41,13 +42,14 @@
             zhufengAnimate(_this.wrapper_box, {
                 width: 100,
                 height: 50,
-                marginLeft: -560
+                marginLeft: -560,
+                bottom:  230
             }, 300, function () {
                 zhufengAnimate(_this.wrapper_box, {
                     width: 0,
                     height: 0,
                     marginLeft: -920,
-                    top: 700
+                    bottom: 100
                 }, 100, function () {
                     _this.wrapper_box.style.display = "none";
                     for (var i = 0, len = _this.info_title.length; i < len; i++) {

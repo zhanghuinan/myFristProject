@@ -5,6 +5,7 @@
         this.imgList=this.banner_box.getElementsByTagName('a');
         this.small_box=utils.children(this.banner)[1];
         this.infoTitle=utils.lastChild(this.banner);
+        this.info_title=this.infoTitle.getElementsByTagName('div');
         this.small_box_img=utils.firstChild(this.small_box);
         this.small_imgList=this.small_box_img.getElementsByTagName('img');
         this.oLis=this.small_box_img.getElementsByTagName('li');
@@ -36,7 +37,7 @@
                 var str='url("'+curData["img1"]+'") 50% 0 / cover no-repeat fixed';
                 str1+="<a href='javascript:;' trueImg='"+str+"'></a>";
                 i==0?str2+="<li style='bottom: 0'><img trueImg='"+this.jsonData[0]["img2"]+"' src='' alt=''></li>":str2+="<li><img trueImg='"+curData["img2"]+"' src='' alt=''></li>";
-                str3+="<div class='info_title'><h3><a>"+curData["h3"]+"</a></h3><p>"+curData["p"]+"</p></div>"
+                i==0?str3+="<div class='info_title' con_id='"+i+"' style='display: block'><h3><a>"+curData["h3"]+"</a></h3><p>"+curData["p"]+"</p></div>":str3+="<div class='info_title' con_id='"+i+"'><h3><a>"+curData["h3"]+"</a></h3><p>"+curData["p"]+"</p></div>"
             }
             this.banner_box.innerHTML=str1;
             this.small_box_img.innerHTML=str2;
@@ -85,6 +86,11 @@
                 var curLi=this.oLis[i];
                 utils.css(curLi, 'bottom', -15);
                 i==this.step?utils.css(curLi, 'bottom', 0):null;
+            }
+            for(i= 0;i<len;i++){
+                var curInfo=this.info_title[i];
+                var con_id=curInfo.getAttribute("con_id");
+                curInfo.style.display=con_id==this.step?"block":"none";
             }
         },
         tipEvent: function () {
