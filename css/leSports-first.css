@@ -54,7 +54,7 @@ html, body {
     padding-top: 12px;
     width: 100%;
     min-width: 1200px;
-    height: 50px;
+    height: 60px;
     z-index: 7;
 }
 .header .logo_left {
@@ -64,7 +64,7 @@ html, body {
     float: left;
     width: 220px;
     height: 62px;
-    z-index: 5;
+    z-index: 12;
 }
 .header .logo_left div {
     float: left;
@@ -96,10 +96,11 @@ html, body {
     padding-left: 20px;
     height: 50px;
     background: #37393d;
+    z-index: 9;
 }
 .header .nav_active .active1 {
     float: left;
-    width: 26px;
+    width: 28px;
     height: 50px;
     background: #37393d;
 }
@@ -117,7 +118,7 @@ html, body {
     width: 160px;
     height: 12px;
     background-position: -156px -374px;
-    z-index: 5;
+    z-index: 16;
 }
 .header .nav_time2 {
     position: absolute;
@@ -125,7 +126,7 @@ html, body {
     margin-left: -69px;
     width: 138px;
     height: 73px;
-    z-index: 5;
+    z-index: 17;
 }
 .header .nav_time2 .click {
     position: absolute;
@@ -150,6 +151,9 @@ html, body {
 }
 /*header .nav_time end*/
 .header .nav_list {
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 50px;
     background: #5cbfeb;
@@ -160,32 +164,34 @@ html, body {
     padding: 0 7px;
     height: 50px;
     line-height: 50px;
+    font-size: 14px;
+    overflow: hidden;
 }
 .header .nav_list .nav_all li a {
     padding: 0 .2em;
-    font-size: 14px;
+    font-size: 1em;
     color: #ffffff;
 }
 .header .nav_list .nav_all {
     position: absolute;
-    z-index: 20;
+    z-index: 15;
 }
 .header .nav_list .navFirst {
     margin-right: 47px;
-    right: 52%;
+    left: 190px;
 }
 .header .nav_list .navSecond {
     margin-left: 47px;
-    left: 48%;
+    left:650px;
 }
 .header .nav_list .navThird {
     margin-left: 47px;
-    left: 100%;
+    right: -200px;
 }
 .header .nav_list .arrow_right {
     position: absolute;
-    top: 29px;
-    left: 155px;
+    top: 15px;
+    left: 160px;
     width: 16px;
     height: 16px;
     background-position: -329px -115px;
@@ -195,12 +201,14 @@ html, body {
     display: none;
     position: relative;
     width: 100%;
+    right:80px;
     height: 50px;
     background: #37393d;
+    z-index: 10;
 }
 .header .nav_list .search_show .search_bg {
     position: relative;
-    margin: 0 auto;
+    margin-left: 520px;
     width: 445px;
 }
 .search_show .search_bg .search_icon {
@@ -252,7 +260,7 @@ html, body {
 .header .nav_list .search_show .right_icon {
     position: absolute;
     top: 0;
-    right: 80px;
+    right: 0;
     width: 20px;
     height: 50px;
     background-position: -59px -90px;
@@ -260,29 +268,41 @@ html, body {
 .header .nav_list .search_show .close_btn {
     position: absolute;
     top: 19px;
-    right: 115px;
+    right: 35px;
     width: 12px;
     height: 12px;
     background-position: -183px -121px;
 }
 /*header .nav_list end*/
-.header .nav_small .nav_small_all {
+.header .nav_small{
     display: none;
     position: absolute;
     top: 62px;
     left: 0;
+    right: 0;
     width: 100%;
+    background: #37393d;
+}
+.header .nav_small ul{
+    display: none;
+    margin: 0 auto;
     height: 44px;
     line-height: 44px;
     background: #37393d;
 }
-.header .nav_small .nav_small_all li a {
-    float: left;
-    padding: 0 0.9em;
+.header .nav_small_all{
+    padding-left: 150px;
 }
-.header .nav_small .nav_small_all li a {
+.header .nav_small ul li{
+    float: left;
+    padding: 0 0.8em;
+}
+.header .nav_small ul li a {
+    font-size: 12px;
     color: #fff;
 }
+
+
 /*header .nav_small end*/
 .header .nav_right {
     position: absolute;
@@ -292,7 +312,7 @@ html, body {
     height: 50px;
     line-height: 50px;
     background: #5cbfeb;
-    z-index: 1;
+    z-index: 15;
 }
 .header .nav_right .arrow_left {
     float: left;
@@ -522,7 +542,7 @@ html, body {
 .content .wrapper_box {
     position: absolute;
     left: 50%;
-    top: 375px;
+    top: 383px;
     margin-left: -460px;
     width: 920px;
     height: 223px;
@@ -752,7 +772,8 @@ html, body {
     margin-top: 3px;
 }
 
-.content .info_title {
+.content .infoTitle {
+
     position: absolute;
     left: 50%;
     bottom: 286px;
@@ -762,7 +783,11 @@ html, body {
     background: rgba(0, 0, 0, .05);
     z-index: 5;
 }
+.content .info_title{
+    display: none;
+}
 .content .info_title h3{
+
     height: 54px;
     line-height: 54px;
 }

@@ -16,13 +16,14 @@
             <li class="tel">
                 <input type="text" value="手机号">
             </li>
-            <li>
-                <input type="password">
+            <li class="pwdLi">
                 <lable class="pwd">密码</lable>
+                <input type="password" class="password">
+
             </li>
             <li class="activeCode">
                 <input type="text" value="验证码" class="w130">
-                <span href="javascript:;">a e g t</span>
+                <a href="javascript:;">a e g t</a>
             </li>
             <li class="activeCode">
                 <input type="text" value="六位激活码" class="w130">
@@ -71,7 +72,9 @@
             input.onblur=function(){
                 lable.style.display="block";
             };
-            return;
+            lable.onclick=function(){
+                lable.style.display="none";
+            }
         }
     }
 
